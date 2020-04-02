@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`World map component should render 1`] = `
+<InlineSVG
+  alt="World Map"
+  cacheRequests={true}
+  data-uk-svg={true}
+  innerRef={[Function]}
+  onLoad={[Function]}
+  src="world.svg"
+  uniquifyIDs={false}
+/>
+`;
