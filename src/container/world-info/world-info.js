@@ -2,6 +2,7 @@ import { WorldMap } from '../../component/world-map/world-map';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { FindCountryByCode } from './world-info.store';
+import { CountryInfo } from '../../component/country-info/country-info';
 
 export function WorldInfo() {
   const country = useSelector(state => state.country);
@@ -18,7 +19,7 @@ export function WorldInfo() {
       </div>
       <div className="uk-width-1-3@m">
         <div className="uk-card uk-card-default uk-card-body">
-          <pre>{JSON.stringify(country)}</pre>
+          <CountryInfo country={country}/>
         </div>
       </div>
     </div>
