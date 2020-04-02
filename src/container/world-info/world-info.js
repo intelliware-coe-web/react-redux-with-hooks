@@ -4,13 +4,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FindCountryByCode } from './world-info.store';
 
 export function WorldInfo() {
-  const dispatch = useDispatch();
   const country = useSelector(state => state.country);
+
+  const dispatch = useDispatch();
+  const findCountryByCode = code => dispatch(FindCountryByCode(code));
+
   return (
     <div className="uk-grid-match" data-uk-grid={true}>
       <div className="uk-width-2-3@m">
         <div className="uk-card uk-card-default uk-card-body">
-          <WorldMap onCountryClick={code => dispatch(FindCountryByCode(code))}/>
+          <WorldMap onCountryClick={findCountryByCode}/>
         </div>
       </div>
       <div className="uk-width-1-3@m">
