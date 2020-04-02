@@ -13,7 +13,7 @@ export function FindCountryByCode(code) {
 const fetchCountrySuccess = '[world] fetch country success';
 const fetchCountryFailed = '[world] fetch country failure';
 
-export function* findCountry(action) {
+function* findCountry(action) {
   try {
     const country = yield call(fetchCountry, action.payload);
 
@@ -39,7 +39,8 @@ export function* findCountry(action) {
 const findCountryDetailsByName = '[world] fetch country details';
 const fetchCountryDetailsSuccess = '[world] fetch country details success';
 const fetchCountryDetailsFailure = '[world] fetch country details failure';
-export function* findCountryDetails(action) {
+
+function* findCountryDetails(action) {
   try {
     const description = yield call(describeCountry, action.payload);
     yield put({
@@ -61,12 +62,12 @@ export function* countrySaga() {
 }
 
 export default function CountryReducer(state = {}, action) {
-  if (action.type === fetchCountrySuccess) {
-    return {...state, ...action.payload };
-  }  else if (action.type === fetchCountryDetailsSuccess) {
-    return { ...state, details: action.payload }
-  }
-  else {
-    return state;
+  switch (action.type) {
+    case fetchCountrySuccess:
+      return {...state, ...action.payload};
+    case fetchCountryDetailsSuccess:
+      return {...state, details: action.payload};
+    default:
+      return state;
   }
 }
