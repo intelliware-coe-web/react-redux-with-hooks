@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
+import '../node_modules/uikit/dist/js/uikit.min'
+import '../node_modules/uikit/dist/js/uikit-core.min'
+import '../node_modules/uikit/dist/js/uikit-icons.min'
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
