@@ -1,9 +1,9 @@
 import { WorldMap } from '../../component/world-map/world-map';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { FindCountryByCode } from './country.store';
+import { FindCountryByCode } from '../../domain/country/country.store';
 import { CountryInfo } from '../../component/country-info/country-info';
-import { LoadCovid19Stats } from '../../store/covid-19.store';
+import { LoadCovid19Stats } from '../../domain/covid-19/covid-19.store';
 
 export function WorldInfo() {
   const country = useSelector(state => state.country);
