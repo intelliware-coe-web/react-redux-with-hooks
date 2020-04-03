@@ -41,7 +41,9 @@
   },
   "devDependencies": {
     "@storybook/addon-actions": "^5.3.18",
+    "@storybook/addon-knobs": "^5.3.18",
     "@storybook/addon-links": "^5.3.18",
+    "@storybook/addon-storysource": "^5.3.18",
     "@storybook/addons": "^5.3.18",
     "@storybook/preset-create-react-app": "^2.1.1",
     "@storybook/react": "^5.3.18",
@@ -52,6 +54,7 @@
     "@types/redux": "^3.6.0",
     "@types/redux-saga": "^0.10.5",
     "@types/uikit": "^3.3.0",
-    "node-sass": "^4.13.1"
+    "node-sass": "^4.13.1",
+    "storybook-dark-mode": "^0.4.0"
   }
 }
