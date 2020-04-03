@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/react-redux-with-hooks/static/css/main.fd319222.chunk.css",
-    "main.js": "/react-redux-with-hooks/static/js/main.d56e5731.chunk.js",
-    "main.js.map": "/react-redux-with-hooks/static/js/main.d56e5731.chunk.js.map",
-    "runtime-main.js": "/react-redux-with-hooks/static/js/runtime-main.04099ec8.js",
-    "runtime-main.js.map": "/react-redux-with-hooks/static/js/runtime-main.04099ec8.js.map",
-    "static/js/2.4b84028e.chunk.js": "/react-redux-with-hooks/static/js/2.4b84028e.chunk.js",
-    "static/js/2.4b84028e.chunk.js.map": "/react-redux-with-hooks/static/js/2.4b84028e.chunk.js.map",
-    "index.html": "/react-redux-with-hooks/index.html",
-    "precache-manifest.ee96cecc020384c481b27308de6acf24.js": "/react-redux-with-hooks/precache-manifest.ee96cecc020384c481b27308de6acf24.js",
-    "service-worker.js": "/react-redux-with-hooks/service-worker.js",
-    "static/css/main.fd319222.chunk.css.map": "/react-redux-with-hooks/static/css/main.fd319222.chunk.css.map",
-    "static/js/2.4b84028e.chunk.js.LICENSE.txt": "/react-redux-with-hooks/static/js/2.4b84028e.chunk.js.LICENSE.txt",
-    "static/media/world.svg": "/react-redux-with-hooks/static/media/world.6f8c208a.svg"
+    "main.css": "./static/css/main.fd319222.chunk.css",
+    "main.js": "./main.06fec30b30ad0144d084.bundle.js",
+    "main.css.map": "./static/css/main.fd319222.chunk.css.map",
+    "main.js.map": "./main.06fec30b30ad0144d084.bundle.js.map",
+    "runtime~main.js": "./runtime~main.06fec30b30ad0144d084.bundle.js",
+    "runtime~main.js.map": "./runtime~main.06fec30b30ad0144d084.bundle.js.map",
+    "vendors~main.js": "./vendors~main.06fec30b30ad0144d084.bundle.js",
+    "vendors~main.js.map": "./vendors~main.06fec30b30ad0144d084.bundle.js.map",
+    "iframe.html": "./iframe.html",
+    "precache-manifest.d6037689d8c3ed26f400c579492ddce4.js": "./precache-manifest.d6037689d8c3ed26f400c579492ddce4.js",
+    "service-worker.js": "./service-worker.js",
+    "static/media/world.svg": "./static/media/world.6f8c208a.svg",
+    "vendors~main.06fec30b30ad0144d084.bundle.js.LICENSE.txt": "./vendors~main.06fec30b30ad0144d084.bundle.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.04099ec8.js",
-    "static/js/2.4b84028e.chunk.js",
+    "runtime~main.06fec30b30ad0144d084.bundle.js",
+    "vendors~main.06fec30b30ad0144d084.bundle.js",
     "static/css/main.fd319222.chunk.css",
-    "static/js/main.d56e5731.chunk.js"
+    "main.06fec30b30ad0144d084.bundle.js"
   ]
 }
