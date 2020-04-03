@@ -1,4 +1,4 @@
-import CountryReducer from './world-info.store';
+import CountryReducer from './country.store';
 
 describe('Country Reducer', () => {
   it('should append the country info on country fetched', () => {
