@@ -17,7 +17,7 @@ export function CountryInfo({country = {}}) {
       <dt>Capital</dt>
       <dd>{country.capital}</dd>
       <dt>Population</dt>
-      <dd>{country.population}</dd>
+      <dd>{new Intl.NumberFormat().format(country.population)}</dd>
     </dl>
     <Details>
       <h1 className='uk-heading-small'>{country.name}</h1>

@@ -11,7 +11,7 @@ export function WorldInfo() {
   const findCountryByCode = code => dispatch(FindCountryByCode(code));
 
   return (
-    <div className="uk-grid-match" data-uk-grid={true}>
+    <div className="uk-grid-match uk-padding" data-uk-grid={true}>
       <div className="uk-width-2-3@m">
         <div className="uk-card uk-card-default uk-card-body">
           <WorldMap onCountryClick={findCountryByCode}/>
