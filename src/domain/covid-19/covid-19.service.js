@@ -1,27 +1,34 @@
-export function getGlobalStats() {
-  const proxy = 'http://localhost:8080';
-  return Promise.all([
-    'http://health-api.com/api/v1/covid-19/all',
-    'http://health-api.com/api/v1/covid-19/total'
-  ].map(url => `${proxy}/${url}`)
-    .map(url => fetch(url)))
-    .then(response => Promise.all(response.map(result => result.json())))
-    .then(([countries, totals]) => countries.reduce((map, country) => {
-      if (map[country.country_code]) {
-        const original = map[country.country_code];
-        map[country.country_code] = {
-          ...country,
-          state: '',
-          confirmed: original.confirmed + country.confirmed,
-          deaths: original.deaths + country.deaths,
-          recovered: original.recovered + country.recovered,
-        }
-      } else {
-        map[country.country_code] = country
-      }
-      const stats = map[country.country_code];
-      stats.confirmed_percentage = stats.confirmed / totals.total_confirmed;
+import { proxyUrls, request } from '../../helpers/rest-client';
 
-      return map;
-    }, {}))
+export function getGlobalStats() {
+  const sources = [
+      'http://health-api.com/api/v1/covid-19/all',
+      'http://health-api.com/api/v1/covid-19/total'
+    ];
+
+  return request(proxyUrls(sources).map(url => fetch(url)))
+    .then(([countries, totals]) => countries.reduce(indexStatsByCountryCode(totals), {}));
+}
+
+function indexStatsByCountryCode(totals) {
+  return function indexStatsByCountryCode(indexedStats, countryStats) {
+    const countryCode = countryStats.country_code;
+    indexedStats[countryCode] = indexedStats[countryCode] ?
+      mergeStats(indexedStats[countryCode], countryStats) : countryStats;
+
+    const stats = indexedStats[countryCode];
+    stats.confirmed_percentage = stats.confirmed / totals.total_confirmed;
+
+    return indexedStats;
+  }
+}
+
+function mergeStats(stat1, stat2) {
+  return {
+    ...stat1,
+    state: '',
+    confirmed: stat1.confirmed + stat2.confirmed,
+    deaths: stat1.deaths + stat2.deaths,
+    recovered: stat1.recovered + stat2.recovered
+  }
 }
