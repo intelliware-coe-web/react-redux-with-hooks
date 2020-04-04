@@ -6,7 +6,7 @@ export function getGlobalStats() {
       'http://health-api.com/api/v1/covid-19/total'
     ];
 
-  return request(proxyUrls(sources).map(url => fetch(url)))
+  return request(proxyUrls(sources))
     .then(([countries, totals]) => countries.reduce(indexStatsByCountryCode(totals), {}));
 }
 
